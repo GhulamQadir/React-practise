@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Logo from "../Logo/logo";
 import './navbar.css'
 
 
@@ -8,7 +9,7 @@ class Header extends Component {
             <div>
                 <div className="navbar_div">
                     <nav className="myNav">
-                        <h1 className="logo">Header</h1>
+                        <Logo />
                         <div className="nav_links_div">
                             <a className="nav_links" href="#">Home</a>
                             <a className="nav_links" href="#">About</a>

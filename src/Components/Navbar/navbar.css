@@ -2,6 +2,19 @@ nav {
     background-color: blue;
     height: 50px;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav_links_div {
+    float: right !important;
+    padding: 10px;
+}
+
+.nav_links {
+    color: white !important;
+    margin: 10px;
 }
 
 .logo {

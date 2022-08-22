@@ -1,39 +1,19 @@
 import React, { Component } from 'react';
-
+import Header from './Components/Navbar/navbar';
+import MainComponent from './Components/MainComponent/main-component';
 
 class App extends Component {
   render() {
-    let myFullName = {
-      firstName: "Ghulam Qadir ",
-      lastName: "Sakaria"
-    }
-
-    let myArr = [1, 2, 3, 4, 5]
-
-    let todos = [
-      { title: "React" },
-      { title: "JavaScript" },
-      { title: "CSS" },
-      { title: "HTML" }
-    ]
-
     return (
       <div>
-        {/* Basic Code */}
-        <h1>Hi, {`${myFullName.firstName}${myFullName.lastName}`}</h1>
-        <h2>{myArr}</h2>
+
+        {/* Rendering Header from external file */}
+        <Header />
 
 
+        {/* Rendering Main-Component from external file */}
+        <MainComponent />
 
-
-        {/* Rendering Todos Array Data using Map*/}
-        <div>
-          {todos.map((todo, index) => {
-            return <p key={index}>{`${index + 1}: ${todo.title}`}</p>
-
-          })}
-        </div>
-        <br />
       </div>
     )
   }

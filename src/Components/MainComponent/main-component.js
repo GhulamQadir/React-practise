@@ -44,7 +44,19 @@ class MainComponent extends Component {
             name: inputVal.target.value
         })
     }
-    getUserName = () => { }
+
+
+    setData = (e) => {
+
+
+        e.preventDefault();
+    }
+
+    handleChange(e) {
+
+        console.log(e.target.value)
+    }
+
 
     render() {
         let myFullName = {
@@ -93,9 +105,23 @@ class MainComponent extends Component {
 
                 {/* STATE PRACTISE */}
                 {/* setting value of input field */}
-                <h2>Your name is: {this.state.name}</h2>
-                <input onChange={(e) => this.setUserName(e)} type="text" placeholder="Enter your name" />
+                {/* <h2>Your name is: {this.state.name}</h2>
+                <input onChange={(e) => this.setUserName(e)} type="text" placeholder="Enter your name" /> */}
 
+
+
+
+
+                {/* Form Using State */}
+                <h2>Form:</h2>
+                <form method="post" onSubmit={this.setData}>
+                    <input onSubmit={(e) => this.handleChange(e)} name="name" type="text" placeholder="Enter your name" />
+                    <br />
+                    <input onSubmit={(e) => this.handleChange(e)} name="email" type="text" placeholder="Enter your email" />
+                    <br />
+                    <button onClick={this.setData}>Set Data</button>
+
+                </form>
             </div>
         )
     }

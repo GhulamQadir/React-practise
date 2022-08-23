@@ -19,7 +19,7 @@ class Comp2 extends Component {
     render() {
         return (
             <div>
-                <h3>This is Component 2 from multiple components file</h3>
+                <h3 style={{ color: "red" }}>This is Component 2 from multiple components file</h3>
             </div>
         )
     }

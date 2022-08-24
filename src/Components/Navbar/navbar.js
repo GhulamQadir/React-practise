@@ -9,7 +9,7 @@ class Header extends Component {
             <div>
                 <div className="navbar_div">
                     <nav className="myNav">
-                        <Logo />
+                        <Logo /><span style={{ color: "white" }}>{this.props.page}</span>
                         <div className="nav_links_div">
                             <a className="nav_links" href="#">Home</a>
                             <a className="nav_links" href="#">About</a>

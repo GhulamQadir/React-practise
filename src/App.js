@@ -10,8 +10,8 @@ class App extends Component {
       <div>
 
         {/* Rendering Header from external file */}
-        <Header />
 
+        <Header page="App Header" />
 
         {/* Rendering Main-Component from external file */}
         <MainComponent />

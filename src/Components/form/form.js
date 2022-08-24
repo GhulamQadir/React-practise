@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './form.css'
 
 
 
@@ -8,12 +9,12 @@ class Form extends Component {
         super()
         this.state = {
             inputValues: {
-                name: "myName",
-                email: "myEmail"
+                name: "",
+                email: ""
             },
             headingValues: {
-                name: "default",
-                email: "hello"
+                name: "",
+                email: ""
             }
         }
     }
@@ -39,10 +40,10 @@ class Form extends Component {
     }
     render() {
         return (
-            <div style={{ margin: 10 }}>
+            <div className="form-div">
+                <h1>Form Component</h1>
                 <br />
-                <br />
-                <h2>My name is {this.state.headingValues.name}</h2>
+                <p>My name is {this.state.headingValues.name}</p>
                 <p>My email is {this.state.headingValues.email}</p>
                 <br />
                 <form onSubmit={(e) => this.setData(e)}>

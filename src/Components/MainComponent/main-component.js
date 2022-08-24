@@ -73,7 +73,9 @@ class MainComponent extends Component {
         ]
         return (
             <div className="main-component">
-                <h1>Hi, {`${myFullName.firstName}${myFullName.lastName}`}</h1>
+                <h1>Main Component</h1>
+                <br />
+                <h2>Hi, {`${myFullName.firstName}${myFullName.lastName}`}</h2>
 
                 <br />
                 {/* Rendering numbers array */}
@@ -94,7 +96,9 @@ class MainComponent extends Component {
                 <br />
                 <br />
 
-                {/* Using State */}
+
+
+                {/* Setting and getting name using state*/}
                 {/* <h1>My name is {this.state.name}</h1>
                 <p>email: {this.state.email}</p>
                 <button onClick={this.getName}>Get Name</button>
@@ -102,27 +106,17 @@ class MainComponent extends Component {
 
 
 
-                {/* STATE PRACTISE */}
-                {/* setting value of input field */}
-                {/* <h2>Your name is: {this.state.name}</h2>
-                <input onChange={(e) => this.setUserName(e)} type="text" placeholder="Enter your name" /> */}
-
-
-                <br />
                 <br />
                 <br />
 
 
-                {/* Form Using State */}
-                <h2>Form:</h2>
-                <form onSubmit={(e) => { e.preventDefault() }}>
-                    <h3>My name is {this.state.name}</h3>
-                    <p>My email is {this.state.email}</p>
-                    <input onChange={(e) => this.handleChange(e)} name="name" type="text" placeholder="Enter your name" />
-                    <br />
-                    <input onChange={(e) => this.handleChange(e)} name="email" type="text" placeholder="Enter your email" />
-                    <br />
-                </form>
+                {/* Realtime changes Using State */}
+                <h3>My name is {this.state.name}</h3>
+                <p>My email is {this.state.email}</p>
+                <input onChange={(e) => this.handleChange(e)} name="name" type="text" placeholder="Enter your name" />
+                <br />
+                <input onChange={(e) => this.handleChange(e)} name="email" type="text" placeholder="Enter your email" />
+                <br />
 
 
 

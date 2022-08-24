@@ -9,11 +9,10 @@ class MainComponent extends Component {
             name: "Ghulam Qadir",
             email: "ghulamqadirsakaria25@gmail.com"
         }
-        this.state = {
-            name: "Ghulam Qadir",
-            email: "ghulamqadirsakaria25@gmail.com"
-        }
+
+
         // this.setName = this.setName.bind(this)
+        // this.handleChange = this.handleChange(this)
     }
 
 
@@ -46,16 +45,16 @@ class MainComponent extends Component {
     }
 
 
-    setData = (e) => {
 
 
-        e.preventDefault();
-    }
-
+    // Updating value onChange
     handleChange(e) {
-
-        console.log(e.target.value)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
+
+
 
 
     render() {
@@ -109,20 +108,26 @@ class MainComponent extends Component {
                 <input onChange={(e) => this.setUserName(e)} type="text" placeholder="Enter your name" /> */}
 
 
-
+                <br />
+                <br />
+                <br />
 
 
                 {/* Form Using State */}
                 <h2>Form:</h2>
-                <form method="post" onSubmit={this.setData}>
-                    <input onSubmit={(e) => this.handleChange(e)} name="name" type="text" placeholder="Enter your name" />
+                <form onSubmit={(e) => { e.preventDefault() }}>
+                    <h3>My name is {this.state.name}</h3>
+                    <p>My email is {this.state.email}</p>
+                    <input onChange={(e) => this.handleChange(e)} name="name" type="text" placeholder="Enter your name" />
                     <br />
-                    <input onSubmit={(e) => this.handleChange(e)} name="email" type="text" placeholder="Enter your email" />
+                    <input onChange={(e) => this.handleChange(e)} name="email" type="text" placeholder="Enter your email" />
                     <br />
-                    <button onClick={this.setData}>Set Data</button>
-
                 </form>
-            </div>
+
+
+
+
+            </div >
         )
     }
 }

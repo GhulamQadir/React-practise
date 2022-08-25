@@ -21,8 +21,8 @@ class App extends Component {
         <br />
 
         {/* Made multiple components in one file */}
-        <Comp1 />
-        <Comp2 />
+        <Comp1 number="1" />
+        <Comp2 number="2" />
       </div>
     )
   }

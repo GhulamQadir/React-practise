@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 
 
-class About extends Component {
+class About extends React.Component {
+    goToHome = () => {
+        this.props.history.push('/')
+    }
     render() {
 
         return (
@@ -12,6 +15,12 @@ class About extends Component {
                 <br />
                 <br />
                 <Link to="/">Home</Link>
+                <br />
+                <br />
+
+                {/* Routing through link */}
+                <button onClick={this.goToHome}>Go to Home</button>
+
             </div>
         )
     }

@@ -1,23 +1,40 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import MainComponent from "../../Components/MainComponent/main-component";
 
 
 
 class Home extends Component {
     goToAbout = () => {
-        this.props.history.push('/about')
+        console.log(this.props.history)
+        this.props.history.replace('/about')   // replacing path here without coming back
     }
     render() {
         return (
-            <div>
+            <div style={{ margin: 10 }}>
                 <h1>Home PAGE</h1>
                 <br />
                 <br />
-                <button onClick={this.goToAbout}>Go to Home</button>
-                {/* <Link to="/about">About</Link> */}
+                <Link to="/about">About</Link>
+                <br />
+                <br />
+
+
+
+                {/* Routing through JavaScript */}
+                <button onClick={this.goToAbout}>Go to About</button>
+
+                <br />
+                <br />
+
+
+
+                {/* Main Component */}
+                <MainComponent />
+
             </div>
         )
     }
 }
 
-export default Home;
+export default withRouter(Home);

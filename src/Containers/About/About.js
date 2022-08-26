@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import Form from "../../Components/form/form";
 
 
 
-class About extends React.Component {
+class About extends Component {
     goToHome = () => {
         this.props.history.push('/')
     }
     render() {
 
         return (
-            <div>
+            <div style={{ margin: 10 }}>
                 <h1>About PAGE</h1>
                 <br />
                 <br />
@@ -18,12 +19,19 @@ class About extends React.Component {
                 <br />
                 <br />
 
-                {/* Routing through link */}
+
+
+                {/* Routing through JavaScript */}
                 <button onClick={this.goToHome}>Go to Home</button>
 
+
+
+
+                {/* Form Component */}
+                <Form />
             </div>
         )
     }
 }
 
-export default About;
+export default withRouter(About);

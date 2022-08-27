@@ -35,7 +35,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        console.log("componentDidMount")             // sabse end ma chalega
+        console.log("componentDidMount")                 // sabse end ma chalega
 
 
         // API Calling
@@ -52,21 +52,44 @@ class Home extends Component {
     }
 
 
-    // increment = () => {
-    //     this.setState({
-    //         count: this.state.count + 1
-    //     })
-    // }
+    increment = () => {
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
 
 
-    // decrement = () => {
-    //     let { count } = this.state
+    decrement = () => {
+        let { count } = this.state
 
-    //     count > 0 ? this.setState({ count: count - 1 }) : count = count
-    // }
+        count > 0 ? this.setState({ count: count - 1 }) : count = count
+    }
+
+    reset = () => {
+        let { count } = this.state
+        count = 0
+        this.setState({ count: count })
+    }
 
 
 
+    shouldComponentUpdate() {         // this lifecycle(shouldComponentUpdate) stops component from rendering although the state would be update
+
+        if (this.state.count < 10) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+
+
+    getSnapshotBeforeUpdate(preProps, preState) {    // state update hony s pehle wali value get save karega
+        console.log("getSnapshotBeforeUpdate=>>", preState)
+    }
+
+    componentDidUpdate() { }
 
 
 
@@ -75,6 +98,8 @@ class Home extends Component {
         console.log(this.props.history)
         this.props.history.replace('/about')   // replacing path here without coming back
     }
+
+
     render() {
         console.log("Render....")
         return (
@@ -88,17 +113,20 @@ class Home extends Component {
 
 
                 {/* Counter App */}
-                {/* <div style={{ textAlign: "center", justifyContent: "center" }}>
-                    <p>Count: {this.state.count}</p>
-                    <button onClick={this.increment}>Increment</button>
-                    <button onClick={this.decrement}>Decrement</button>
-                </div> */}
+                <div style={{ textAlign: "center", justifyContent: "center" }}>
+                    {/* <p>Count: {this.state.count}</p> */}
+                </div>
 
                 <Counter state={this.state} />
 
+                <div className="btns">
+                    <button onClick={this.increment}>Increment</button>
+                    <button onClick={this.decrement}>Decrement</button>
+                    <button onClick={this.reset}>Reset</button>
+                </div>
 
                 {/* Routing through JavaScript */}
-                {/* <button onClick={this.goToAbout}>Go to About</button> */}
+                <button onClick={this.goToAbout}>Go to About</button>
                 <br />
                 <br />
                 <br />

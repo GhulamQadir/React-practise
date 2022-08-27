@@ -17,6 +17,11 @@
     font-size: 15px;
 }
 
+
+.btns {
+    text-align: center;
+}
+
 button {
     display: inline;
     margin: 5px;

@@ -4,6 +4,10 @@ import React, { Component } from "react";
 
 
 class Counter extends Component {
+
+    componentWillUnmount() {                 // Component khtam hojayga
+        console.log("Component khatam hogya...")
+    }
     render() {
         return (
             <div style={{ textAlign: "center", justifyContent: "center" }}>

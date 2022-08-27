@@ -14,7 +14,8 @@ class Home extends Component {
         super()
         this.state = {
             count: 0,
-            users: []
+            users: [],
+            countPreviousVal: 0
         }
         console.log("constructor")
     }
@@ -52,24 +53,44 @@ class Home extends Component {
     }
 
 
+
+    // Counter Functions
     increment = () => {
+        let { count } = this.state
         this.setState({
-            count: this.state.count + 1
+            countPreviousVal: count,
+            count: count + 1
         })
+
+        if (count === 10) {
+            alert("shouldComponentUpdate wala lifecycle chal gaya")
+        }
     }
 
 
     decrement = () => {
         let { count } = this.state
 
-        count > 0 ? this.setState({ count: count - 1 }) : count = count
+        count > 0 ? this.setState({ countPreviousVal: count, count: count - 1 }) : count = count
     }
 
     reset = () => {
-        let { count } = this.state
-        count = 0
-        this.setState({ count: count })
+        let { count, countPreviousVal } = this.state
+        this.setState({
+            countPreviousVal: count,
+            count: 0
+        })
+        console.log(countPreviousVal)
     }
+
+
+    undoChanges = () => {
+        this.setState({
+            count: this.state.countPreviousVal
+        })
+    }
+
+
 
 
 
@@ -85,11 +106,14 @@ class Home extends Component {
 
 
 
-    getSnapshotBeforeUpdate(preProps, preState) {    // state update hony s pehle wali value get save karega
+    getSnapshotBeforeUpdate(preProps, preState) {    // state update hony s pehle wali value save karega
         console.log("getSnapshotBeforeUpdate=>>", preState)
+        return 50
     }
 
-    componentDidUpdate() { }
+    componentDidUpdate(preProps, preState, returnValOfGetSnaphotBefore) {
+        console.log("returnValOfGetSnaphotBefore=>>", returnValOfGetSnaphotBefore)
+    }
 
 
 
@@ -112,18 +136,29 @@ class Home extends Component {
                     <br /> */}
 
 
+
+
+
+
+
+
                 {/* Counter App */}
                 <div style={{ textAlign: "center", justifyContent: "center" }}>
                     {/* <p>Count: {this.state.count}</p> */}
                 </div>
 
-                <Counter state={this.state} />
+                {this.state.count < 10 && <Counter state={this.state} />}
 
                 <div className="btns">
                     <button onClick={this.increment}>Increment</button>
                     <button onClick={this.decrement}>Decrement</button>
-                    <button onClick={this.reset}>Reset</button>
+                    <button disabled={this.state.count === 0} onClick={this.reset}>Reset</button>
+                    <button onClick={this.undoChanges}>Undo</button>
                 </div>
+
+
+
+
 
                 {/* Routing through JavaScript */}
                 <button onClick={this.goToAbout}>Go to About</button>
@@ -131,8 +166,14 @@ class Home extends Component {
                 <br />
                 <br />
 
+
+
+
                 {/* Main Component */}
                 {/* <MainComponent /> */}
+
+
+
 
 
 

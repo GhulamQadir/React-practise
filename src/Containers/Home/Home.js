@@ -2,6 +2,7 @@ import { toBeInTheDocument } from "@testing-library/jest-dom/dist/matchers";
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import MainComponent from "../../Components/MainComponent/main-component";
+import Counter from "./counter/counter";
 import './Home.css'
 
 
@@ -20,11 +21,17 @@ class Home extends Component {
 
 
 
-    static getDerivedStateFromProps() {
-        console.log("getDerivedStateFromProps")       // constructor k baad chalega
-        return {
-            count: 4
-        }
+    static getDerivedStateFromProps(props, state) {
+        // console.log("getDerivedStateFromProps")      // constructor k baad chalega
+
+
+        console.log("derivedState=>> ", state)
+        console.log(props)
+        return null;
+
+        // return {
+        //     count: 4
+        // }
     }
 
     componentDidMount() {
@@ -45,9 +52,18 @@ class Home extends Component {
     }
 
 
+    // increment = () => {
+    //     this.setState({
+    //         count: this.state.count + 1
+    //     })
+    // }
 
 
+    // decrement = () => {
+    //     let { count } = this.state
 
+    //     count > 0 ? this.setState({ count: count - 1 }) : count = count
+    // }
 
 
 
@@ -68,12 +84,21 @@ class Home extends Component {
                 <br />
                 {/* <Link to="/about">About</Link>
                     <br />
-                    <br />
+                    <br /> */}
 
-                    <p>Count: {this.state.count}</p> */}
+
+                {/* Counter App */}
+                {/* <div style={{ textAlign: "center", justifyContent: "center" }}>
+                    <p>Count: {this.state.count}</p>
+                    <button onClick={this.increment}>Increment</button>
+                    <button onClick={this.decrement}>Decrement</button>
+                </div> */}
+
+                <Counter state={this.state} />
+
 
                 {/* Routing through JavaScript */}
-                <button onClick={this.goToAbout}>Go to About</button>
+                {/* <button onClick={this.goToAbout}>Go to About</button> */}
                 <br />
                 <br />
                 <br />
@@ -84,7 +109,7 @@ class Home extends Component {
 
 
                 {/* Api Calling using LifeCycle(componentDidMount) */}
-                <h1 style={{ textAlign: "center" }}>API Calling</h1>
+                {/* <h1 style={{ textAlign: "center" }}>API Calling</h1>
                 <div>
                     {this.state.users.map((user, index) => {
                         return (
@@ -96,7 +121,7 @@ class Home extends Component {
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
 
             </div>
         )

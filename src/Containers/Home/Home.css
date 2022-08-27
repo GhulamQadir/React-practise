@@ -16,3 +16,8 @@
 .phoneNo {
     font-size: 15px;
 }
+
+button {
+    display: inline;
+    margin: 5px;
+}

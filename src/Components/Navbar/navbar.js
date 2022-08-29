@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Logo from "../Logo/logo";
 import './navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCross, faNavicon } from '@fortawesome/free-solid-svg-icons'
 
 
 class Header extends Component {
@@ -18,11 +18,18 @@ class Header extends Component {
         })
     }
 
+    closeNav = () => {
+
+        this.setState({
+            isMobile: false
+        })
+    }
+
     render() {
-        const state = this.state
+        const isMobile = this.state.isMobile
         return (
             <div>
-                <div className={state.isMobile ? "mobileNav" : "navbar_div"}>
+                <div className={isMobile ? "mobileNav" : "navbar_div"}>
                     <nav className="myNav">
                         <Logo />
                         <div className="nav_links_div">
@@ -32,7 +39,9 @@ class Header extends Component {
                             <a className="nav_links" href="#">Contact</a>
                         </div>
                         <div className="nav_icon_div">
-                            <button onClick={this.openNav}><FontAwesomeIcon icon={faCoffee} /></button>
+                            {isMobile ? <button onClick={this.closeNav}><FontAwesomeIcon icon={faCross} /></button>
+                                : <button onClick={this.openNav}><FontAwesomeIcon icon={faNavicon} /></button>
+                            }
                         </div>
 
                     </nav>

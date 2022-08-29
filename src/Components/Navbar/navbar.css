@@ -6,6 +6,7 @@
     justify-content: center;
     width: 100% !important;
     display: inline-block;
+    transition: height 1s;
 }
 
 .nav_links_div {
@@ -37,4 +38,10 @@
 
 .mobileNav {
     height: 150px;
+    background-color: blue;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    transition: height 1s;
 }

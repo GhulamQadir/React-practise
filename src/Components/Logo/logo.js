@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import LogoImg from '../../Images/sample-logo.png'
+import './logo.css'
 
 
 class Logo extends Component {
     render() {
         return (
-            <div style={{ display: 'inline' }}>
-                <img src={LogoImg} style={{ display: 'inline', width: 100, height: 40 }} />
+            <div className='logo_div'>
+                <img src={LogoImg} className="logo_img" />
             </div>
         )
     }

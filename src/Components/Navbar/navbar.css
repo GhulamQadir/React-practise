@@ -19,8 +19,22 @@
     margin: 10px;
 }
 
-.logo {
-    color: white;
-    display: inline;
-    margin-top: 10px;
+.nav_icon_div {
+    display: none;
+    float: right;
+}
+
+@media (max-width:750px) {
+    .nav_links_div {
+        display: none;
+    }
+
+    .nav_icon_div {
+        display: inline-block !important;
+    }
+
+}
+
+.mobileNav {
+    height: 150px;
 }

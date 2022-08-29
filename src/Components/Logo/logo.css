@@ -1,0 +1,16 @@
+.logo_div {
+    display: inline;
+}
+
+.logo_img {
+    display: 'inline';
+    width: 120px;
+    height: 55px;
+    padding-left: 25px;
+}
+
+/* @media (max-width:750px) {
+    .logo_img {
+        display: block;
+    }
+} */

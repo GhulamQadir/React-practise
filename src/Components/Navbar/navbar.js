@@ -29,14 +29,14 @@ class Header extends Component {
         const isMobile = this.state.isMobile
         return (
             <div>
-                <div className={isMobile ? "mobileNav" : "navbar_div"}>
+                <div className={isMobile ? "navbar_div_mobile" : "navbar_div"}>
                     <nav className="myNav">
                         <Logo />
-                        <div className="nav_links_div">
-                            <a className="nav_links" href="#">Home</a>
-                            <a className="nav_links" href="#">About</a>
-                            <a className="nav_links" href="#">Products</a>
-                            <a className="nav_links" href="#">Contact</a>
+                        <div className={isMobile ? "mobileNavLinksDiv" : "nav_links_div"}>
+                            <a className={isMobile ? "navLinksOnMobile" : "nav_links"} href="#">Home</a>
+                            <a className={isMobile ? "navLinksOnMobile" : "nav_links"} href="#">About</a>
+                            <a className={isMobile ? "navLinksOnMobile" : "nav_links"} href="#">Products</a>
+                            <a className={isMobile ? "navLinksOnMobile" : "nav_links"} href="#">Contact</a>
                         </div>
                         <div className="nav_icon_div">
                             {isMobile ? <button onClick={this.closeNav}><FontAwesomeIcon icon={faCross} /></button>

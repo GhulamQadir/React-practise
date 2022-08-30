@@ -6,7 +6,7 @@
     justify-content: center;
     width: 100% !important;
     display: inline-block;
-    /* transition: height 0.5s; */
+    transition: height 0.5s;
 }
 
 
@@ -76,7 +76,7 @@
 .navLinksOnMobile {
     display: block;
     animation: fadeIn 0.7s;
-    color: black;
+    color: white;
 }
 
 @media (min-width:750px) {
@@ -86,12 +86,16 @@
     }
 
     .mobileNavLinksDiv {
-        display: none;
+        float: right !important;
+        margin-right: 20px;
+        margin-top: 10px;
     }
-}
 
-@media (min-width:751px) {
-    .nav_links_div {
-        display: block;
+    .navLinksOnMobile {
+        display: inline;
+        color: white !important;
+        margin: 10px;
+        font-size: 16px;
+        animation: fadeIn 0.7s;
     }
 }

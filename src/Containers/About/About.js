@@ -9,6 +9,7 @@ class About extends Component {
         this.props.history.push('/')
     }
     render() {
+        console.log(this.props.location.state.details)
 
         return (
             <div style={{ margin: 10 }}>
@@ -18,6 +19,7 @@ class About extends Component {
                 <Link to="/">Home</Link>
                 <br />
                 <br />
+                <p>{this.props.location.state.details}</p>
 
 
 

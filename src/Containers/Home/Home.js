@@ -120,7 +120,13 @@ class Home extends Component {
 
     goToAbout = () => {
         console.log(this.props.history)
-        this.props.history.replace('/about')   // replacing path here without coming back
+
+        this.props.history.replace({
+            pathname: '/about', state:
+            {
+                details: "this is product details"
+            }
+        })   // replacing path here without coming back
     }
 
 
